@@ -1,11 +1,13 @@
 
-
 {
+  "scripts": {
+    "dev": "npm --prefix frontend/osweb run dev",
+    "build": "npm --prefix frontend/osweb run build",
+    "preview": "npm --prefix frontend/osweb run preview"
+  },
   "dependencies": {
     "vite": "^7.3.1"
-    
   }
 }
-
 
 

@@ -1,3 +1,88 @@
-body {
-  background-color: #000;
+:root {
+  --bg: #0e1116;
+  --surface: #171c24;
+  --text: #e6edf3;
+  --muted: #a4afbd;
+  --accent: #6da9d2;
+  --border: #2a3442;
 }
+
+* {
+  box-sizing: border-box;
+
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 3rem 1.25rem;
+  background: linear-gradient(180deg, var(--bg) 0%, #11161e 100%);
+  color: var(--text);
+  font-family: "IBM Plex Sans", "Noto Sans", "Segoe UI", sans-serif;
+  display: grid;
+  place-items: center;
+}
+
+h1 {
+  margin: 0;
+  text-align: center;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+#app {
+  width: min(92vw, 680px);
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background-color: var(--surface);
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image {
+  width: min(70vw, 300px);
+  height: 260px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.download-btn {
+  padding: 0.9rem 1.6rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background-color: #1f2633;
+  color: var(--text);
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.download-btn:hover {
+  background-color: #2f7edb;
+}
+
+#nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  border: #e6edf3 1px solid;
+  padding: 0.75rem 1rem;
+}
+
+#nav nav {
+  display: flex;
+ gap: 15px;
+  align-items: left ;
+  margin: ;
+  list-style: none;
+  
+  
+}
+
+
