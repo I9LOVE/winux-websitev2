@@ -4,30 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>osweb</title>
-    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="./src/style.css" />
   </head>
   <body>
       <div id="nav">
         <nav>
-          <li><a href="frontend/osweb/src/login.html">create a new account</a></li>
-          <li><a href="frontend/osweb/src/documentation.html">documentation</a></li>
-
-
-
-
-
-
+          <ul class="nav-list">
+            <li><a href="./src/signup.html">create a new account</a></li>
+            <li><a href="./src/documentation.html">documentation</a></li>
+          </ul>
         </nav>
-        
-
-
-
-
       </div>
     <div id="app">
       <h1>Winux lightweight, fast</h1>
-      <button class="download-btn">Download iso</button>
+      <div class="download-buttons">
+        <button class="download-btn">Download Winux desktop iso</button>
+        <button class="download-btn-bedrock">Download Winux bedrock</button>
+      </div>
     </div>
-    <script type="module" src="/src/main.js"></script>
+
+    <div class="Warn-user-popup">
+
+      <h1>Do you want to download this edition?</h1>
+      <p>this edition is complete nobloot version of windows
+        with mostly command based interface and not recommended
+        for users who are not familiar with command line interface
+        you can download the <strong>Winux standard edition</strong> 
+        for a full desktop enviroment with a graphical user interface.
+      </p>
+      <button class="download-anyway-btn">download anyway</button>
+      <button class="close-popup-btn">close</button>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+    <script type="module" src="./src/main.js"></script>
   </body>
 </html>

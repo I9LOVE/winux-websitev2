@@ -3,39 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Log In</title>
+    <title>Sign Up</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body class="login-page-body">
     <main class="login-page">
       <section class="login-card">
-        <h1>Log in to Winux</h1>
-        <p class="login-subtitle">Access your account to manage downloads and updates.</p>
+        <h1>Create a new account</h1>
+        <p class="login-subtitle">Sign up to get Winux downloads and updates.</p>
 
-        <form class="login-form">
+        <form class="login-form" action="./login.html" method="get">
+          <label for="username">Username</label>
+          <input id="username" type="text" name="username" placeholder="winux-user" />
+
           <label for="email">Email</label>
           <input id="email" type="email" name="email" placeholder="you@example.com" />
 
           <label for="password">Password</label>
           <div class="password-wrap">
-            <input id="password" type="password" name="password" placeholder="Enter your password" />
+            <input id="password" type="password" name="password" placeholder="Create a password" />
             <button type="button" class="password-toggle" aria-label="Show password">Show</button>
           </div>
           <p class="password-rules">Password needs 8+ characters and one symbol.</p>
 
-          <div class="login-meta">
-            <label class="remember-wrap" for="remember">
-              <input id="remember" type="checkbox" name="remember" />
-              Remember me
-            </label>
-            <a href="#">Forgot password?</a>
-          </div>
-
-          <button type="submit" class="download-btn">Log in</button>
+          <button type="submit" class="download-btn">Create account</button>
         </form>
 
         <p class="login-footer">
-          Need an account? <a href="./signup.html">Create one</a>
+          Already have an account? <a href="./login.html">Log in</a>
         </p>
       </section>
     </main>
