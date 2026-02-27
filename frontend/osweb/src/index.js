@@ -1,41 +1,12 @@
-
 const warnUserPopup = document.querySelector(".Warn-user-popup");
 const downloadBtnBedrock = document.querySelector(".download-btn-bedrock");
 const closeBtn = document.querySelector(".close-popup-btn");
 
-if (warnUserPopup && closeBtn) {
-  closeBtn.addEventListener("click", () => {
-    warnUserPopup.style.display = "none";
-  });
-}
-
-if (warnUserPopup && downloadBtnBedrock) {
-  downloadBtnBedrock.addEventListener("click", () => {
-    warnUserPopup.style.display = "block";
-  });
-}
-
-document.addEventListener("click", (event) => {
-  const toggleButton = event.target.closest(".password-toggle");
-  if (!toggleButton) {
-    return;
-  }
-
-  const wrap = toggleButton.closest(".password-wrap");
-  const passwordInput = wrap ? wrap.querySelector("input") : null;
-  if (!passwordInput) {
-    return;
-  }
-
-  const showing = passwordInput.type === "text";
-  passwordInput.type = showing ? "password" : "text";
-  toggleButton.textContent = showing ? "Show" : "Hide";
-  toggleButton.setAttribute("aria-label", showing ? "Show password" : "Hide password");
-});
 
 document.querySelectorAll(".password-wrap").forEach((wrap) => {
   const passwordInput = wrap.querySelector("input");
-  const rulesMessage = wrap.parentElement ? wrap.parentElement.querySelector(".password-rules") : null;
+  const toggleButton = wrap.querySelector(".password-toggle");
+  const rulesMessage = wrap.parentElement.querySelector(".password-rules");
   const form = wrap.closest("form");
 
   if (!passwordInput) {
@@ -44,11 +15,17 @@ document.querySelectorAll(".password-wrap").forEach((wrap) => {
 
   const validatePassword = () => {
     const value = passwordInput.value;
-    const hasMinLength = value.length >= 8;
-    const hasSymbol = /[!@#$%^&*(),.?":{}|<>]/.test(value);
+    const errors = [];
 
-    if (!hasMinLength || !hasSymbol) {
-      passwordInput.setCustomValidity("Use at least 8 characters and at least one symbol.");
+    if (value.length < 8) {
+      errors.push("at least 8 characters");
+    }
+    if (!/[!@#$%^&*(),.?":{}|<>]/.test(value)) {
+      errors.push("one symbol");
+    }
+
+    if (errors.length > 0) {
+      passwordInput.setCustomValidity(`Password needs ${errors.join(" and ")}.`);
       if (rulesMessage) {
         rulesMessage.textContent = "Password needs 8+ characters and one symbol.";
         rulesMessage.classList.add("is-invalid");
@@ -64,6 +41,15 @@ document.querySelectorAll(".password-wrap").forEach((wrap) => {
       rulesMessage.classList.remove("is-invalid");
     }
   };
+
+  if (toggleButton) {
+    toggleButton.addEventListener("click", () => {
+      const showing = passwordInput.type === "text";
+      passwordInput.type = showing ? "password" : "text";
+      toggleButton.textContent = showing ? "Show" : "Hide";
+      toggleButton.setAttribute("aria-label", showing ? "Show password" : "Hide password");
+    });
+  }
 
   passwordInput.addEventListener("input", validatePassword);
 

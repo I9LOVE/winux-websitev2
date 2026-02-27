@@ -14,11 +14,20 @@
 
         <form class="login-form">
           <label for="email">Email</label>
-          <input id="email" type="email" name="email" placeholder="you@example.com" />
+          <input id="email" type="email" name="email" placeholder="you@example.com" required />
 
           <label for="password">Password</label>
           <div class="password-wrap">
-            <input id="password" type="password" name="password" placeholder="Enter your password" />
+            <input
+              id="password"
+              type="password"
+              name="password"
+              placeholder="Enter your password"
+              required
+              minlength="8"
+              pattern="(?=.*[!@#$%^&*(),.?':{}|&lt;&gt;]).{8,}"
+              title="Use at least 8 characters and at least one symbol."
+            />
             <button type="button" class="password-toggle" aria-label="Show password">Show</button>
           </div>
           <p class="password-rules">Password needs 8+ characters and one symbol.</p>
@@ -39,6 +48,9 @@
         </p>
       </section>
     </main>
-    <script type="module" src="./main.js"></script>
+    <footer class="site-footer">
+      <p>&copy; 2026 Winux. All rights reserved.</p>
+    </footer>
+    <script src="./main.js"></script>
   </body>
 </html>

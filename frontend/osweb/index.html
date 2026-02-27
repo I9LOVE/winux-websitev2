@@ -6,21 +6,54 @@
     <title>osweb</title>
     <link rel="stylesheet" href="./src/style.css" />
   </head>
-  <body>
-      <div id="nav">
+  <body class="home-page-body">
+    <div class="site-shell">
+      <header id="nav" class="home-nav">
         <nav>
           <ul class="nav-list">
             <li><a href="./src/signup.html">create a new account</a></li>
             <li><a href="./src/documentation.html">documentation</a></li>
           </ul>
         </nav>
-      </div>
-    <div id="app">
-      <h1>Winux lightweight, fast</h1>
-      <div class="download-buttons">
-        <button class="download-btn">Download Winux desktop iso</button>
-        <button class="download-btn-bedrock">Download Winux bedrock</button>
-      </div>
+      </header>
+
+      <main class="home-main">
+        <section id="app" class="hero-card">
+          <p class="eyebrow">Winux OS</p>
+          <h1>Winux lightweight, fast</h1>
+          <p class="hero-copy">
+            A stripped, practical build that gives older and lower-spec machines a clean second life.
+          </p>
+          <div class="download-buttons">
+            <button class="download-btn">Download Winux desktop iso</button>
+            <button class="download-btn-bedrock">Download Winux bedrock</button>
+          </div>
+        </section>
+
+        <section class="highlights" aria-label="Winux highlights">
+          <article class="highlight-card">
+            <h2>Quick boot</h2>
+            <p>Minimal startup services means faster boot and less waiting.</p>
+          </article>
+          <article class="highlight-card">
+            <h2>Low overhead</h2>
+            <p>Designed to keep memory and CPU usage predictable under load.</p>
+          </article>
+          <article class="highlight-card">
+            <h2>Tooling ready</h2>
+            <p>Command-line focused defaults with docs for a full desktop setup.</p>
+          </article>
+        </section>
+
+        <section class="info-strip">
+          <p><strong>Made for:</strong> older laptops, VMs, and dev test machines</p>
+          <p><strong>Experience:</strong> command-first with optional desktop environment</p>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>&copy; 2026 Winux. All rights reserved.</p>
+      </footer>
     </div>
 
     <div class="Warn-user-popup">
@@ -46,6 +79,6 @@
 
 
 
-    <script type="module" src="./src/main.js"></script>
+    <script src="./src/main.js"></script>
   </body>
 </html>

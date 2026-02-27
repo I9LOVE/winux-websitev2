@@ -6,11 +6,50 @@
     <title>Documentation</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
-  <body>
-    <div id="app">
-      <h1>Documentation</h1>
-      <p>Documentation page is under construction.</p>
-      <a href="../index.html">back to home</a>
+  <body class="doc-page-body">
+    <div class="site-shell">
+      <header class="doc-nav">
+        <nav>
+          <ul class="nav-list">
+            <li><a href="../index.html">home</a></li>
+            <li><a href="./signup.html">create account</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main class="doc-main">
+        <section class="doc-hero">
+          <p class="eyebrow">Documentation</p>
+          <h1>Winux docs</h1>
+          <p class="hero-copy">
+            Setup guides, usage notes, and release details for desktop and bedrock editions.
+          </p>
+        </section>
+
+        <section class="doc-grid" aria-label="Documentation sections">
+          <article class="doc-card">
+            <h2>Getting started</h2>
+            <p>Install steps, first boot checklist, and core commands for new users.</p>
+          </article>
+          <article class="doc-card">
+            <h2>System updates</h2>
+            <p>Track update channels, package sync flow, and safe rollback strategy.</p>
+          </article>
+          <article class="doc-card">
+            <h2>Troubleshooting</h2>
+            <p>Known issues, diagnostic commands, and quick fixes for common problems.</p>
+          </article>
+        </section>
+
+        <section class="info-strip">
+          <p><strong>Status:</strong> documentation content is being expanded</p>
+          <p><strong>Need account access?</strong> <a href="./signup.html">Create one</a></p>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>&copy; 2026 Winux. All rights reserved.</p>
+      </footer>
     </div>
   </body>
 </html>
